@@ -1,14 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-/**
- * Grid record list UI Component
- * @category  Webkul
- * @package   Webkul_Grid
- * @author    Webkul
- * @copyright Copyright (c) 2010-2017 Webkul Software Private Limited (https://webkul.com)
- * @license   https://store.webkul.com/license.html
- */
--->
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Ui/etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
@@ -19,7 +9,7 @@
         <item name="buttons" xsi:type="array">
             <item name="add" xsi:type="array">
                 <item name="name" xsi:type="string">add</item>
-                <item name="label" xsi:type="string" translate="true">Add New Row</item>
+                <item name="label" xsi:type="string" translate="true">Add New Post</item>
                 <item name="class" xsi:type="string">primary</item>
                 <item name="url" xsi:type="string">*/*/addrow</item>
             </item>
@@ -88,7 +78,6 @@
                     <item name="indexField" xsi:type="string">id</item>
                 </item>
             </argument>
-            <!-- Mass actions which you want to add in your grid-->
             <action name="delete">
                 <argument name="data" xsi:type="array">
                     <item name="config" xsi:type="array">
@@ -130,6 +119,14 @@
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">textRange</item>
                     <item name="label" xsi:type="string" translate="true">Title</item>
+                </item>
+            </argument>
+        </column>
+        <column name="category">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">textRange</item>
+                    <item name="label" xsi:type="string" translate="true">Category</item>
                 </item>
             </argument>
         </column>
@@ -182,7 +179,6 @@
                 </item>
             </argument>
         </column>
-        <!-- Add Action with each row of grid and for this we will create a class Action -->
         <actionsColumn name="actions" class="Webkul\Grid\Ui\Component\Listing\Grid\Column\Action">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">

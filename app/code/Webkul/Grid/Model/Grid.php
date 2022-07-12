@@ -17,19 +17,19 @@ class Grid extends \Magento\Framework\Model\AbstractModel implements GridInterfa
     /**
      * CMS page cache tag.
      */
-    const CACHE_TAG = 'wk_grid_records';
+    const CACHE_TAG = 'wk_grid_recor';
 
     /**
      * @var string
      */
-    protected $_cacheTag = 'wk_grid_records';
+    protected $_cacheTag = 'wk_grid_recor';
 
     /**
      * Prefix of model events names.
      *
      * @var string
      */
-    protected $_eventPrefix = 'wk_grid_records';
+    protected $_eventPrefix = 'wk_grid_recor';
 
     /**
      * Initialize resource model.
@@ -72,6 +72,24 @@ class Grid extends \Magento\Framework\Model\AbstractModel implements GridInterfa
     public function setTitle($title)
     {
         return $this->setData(self::TITLE, $title);
+    }
+
+    /**
+     * Get Category.
+     *
+     * @return varchar
+     */
+    public function getCategory()
+    {
+        return $this->getData(self::CATEGORY);
+    }
+
+    /**
+     * Set Category.
+     */
+    public function setCategory($category)
+    {
+        return $this->setData(self::CATEGORY, $category);
     }
 
     /**

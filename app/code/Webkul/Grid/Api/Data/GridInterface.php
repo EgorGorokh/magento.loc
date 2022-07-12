@@ -15,6 +15,7 @@ interface GridInterface
      */
     const ENTITY_ID = 'entity_id';
     const TITLE = 'title';
+    const CATEGORY = 'category';
     const CONTENT = 'content';
     const PUBLISH_DATE = 'publish_date';
     const IS_ACTIVE = 'is_active';
@@ -44,6 +45,17 @@ interface GridInterface
      * Set Title.
      */
     public function setTitle($title);
+    /**
+     * Get Category.
+     *
+     * @return varchar
+     */
+    public function getCategory();
+
+    /**
+     * Set Category.
+     */
+    public function setCategory($category);
 
     /**
      * Get Content.

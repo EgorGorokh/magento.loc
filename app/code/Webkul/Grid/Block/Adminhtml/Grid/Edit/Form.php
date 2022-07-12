@@ -6,8 +6,8 @@
  * @author      Webkul Software Private Limited
  *
  */
-namespace Webkul\Grid\Block\Adminhtml\Grid\Edit;
 
+namespace Webkul\Grid\Block\Adminhtml\Grid\Edit;
 
 /**
  * Adminhtml Add New Row Form.
@@ -21,20 +21,22 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic
 
     /**
      * @param \Magento\Backend\Block\Template\Context $context
-     * @param \Magento\Framework\Registry             $registry
-     * @param \Magento\Framework\Data\FormFactory     $formFactory
-     * @param array                                   $data
+     * @param \Magento\Framework\Registry $registry
+     * @param \Magento\Framework\Data\FormFactory $formFactory
+     * @param array $data
      */
     public function __construct(
         \Magento\Backend\Block\Template\Context $context,
-        \Magento\Framework\Registry $registry,
-        \Magento\Framework\Data\FormFactory $formFactory,
-        \Magento\Cms\Model\Wysiwyg\Config $wysiwygConfig,
-        \Webkul\Grid\Model\Status $options,
-        array $data = []
+        \Magento\Framework\Registry             $registry,
+        \Magento\Framework\Data\FormFactory     $formFactory,
+        \Magento\Cms\Model\Wysiwyg\Config       $wysiwygConfig,
+        \Webkul\Grid\Model\Status               $options,
+        \Webkul\Grid\Model\Status1              $options1,
+        array                                   $data = []
     )
     {
         $this->_options = $options;
+        $this->_options1 = $options1;
         $this->_wysiwygConfig = $wysiwygConfig;
         parent::__construct($context, $registry, $formFactory, $data);
     }
@@ -86,7 +88,19 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic
         );
 
         $wysiwygConfig = $this->_wysiwygConfig->getConfig(['tab_id' => $this->getTabId()]);
-
+        $fieldset->addField(
+            'category',
+            'select',
+            [
+                'name' => 'category',
+                'label' => __('Category'),
+                'id' => 'category',
+                'title' => __('Category'),
+                'values' => $this->_options1->getOptionArray(),
+                'class' => 'status',
+                'required' => true,
+            ]
+        );
         $fieldset->addField(
             'content',
             'editor',

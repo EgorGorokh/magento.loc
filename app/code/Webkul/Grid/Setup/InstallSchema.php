@@ -33,12 +33,8 @@ class InstallSchema implements InstallSchemaInterface
 
         $installer->startSetup();
 
-        /*
-         * Create table 'wk_grid_records'
-         */
-
         $table = $installer->getConnection()->newTable(
-            $installer->getTable('wk_grid_records')
+            $installer->getTable('wk_grid_recor')
         )->addColumn(
             'entity_id',
             \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
@@ -51,6 +47,12 @@ class InstallSchema implements InstallSchemaInterface
             255,
             ['nullable' => false],
             'Title'
+        )->addColumn(
+            'category',
+            \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+            255,
+            ['nullable' => false],
+            'Category'
         )->addColumn(
             'content',
             \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,

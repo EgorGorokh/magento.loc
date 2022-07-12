@@ -15,6 +15,7 @@ class Status implements OptionSourceInterface
      */
     public function getOptionArray()
     {
+
         $options = ['1' => __('Enabled'),'0' => __('Disabled')];
         return $options;
     }

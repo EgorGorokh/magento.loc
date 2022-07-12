@@ -1,0 +1,22 @@
+{
+    "name": "webkul/module-events",
+    "description": "",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "email": "webkul@czargroup.net",
+            "name": "Czargroup"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Webkul\\Events\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}
